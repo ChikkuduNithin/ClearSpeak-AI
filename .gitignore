@@ -1,0 +1,22 @@
+# Python virtual environments
+.venv/
+__pycache__/
+*.pyc
+
+# Node dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Application dynamic data
+backend/uploads/
+backend/database/history_fallback.json
+
+# Environment secrets
+.env
+.env*.local
+
+# OS files
+.DS_Store
+Thumbs.db
