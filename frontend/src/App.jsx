@@ -18,7 +18,7 @@ export default function App() {
       <header className="navbar glass-panel" style={{ borderRadius: "0 0 16px 16px", borderTop: "none" }}>
         <div className="logo-text">
           <Sparkles className="animate-pulse" size={24} />
-          <span>Antigravity PronounceAI Coach</span>
+          <span>ClearSpeak AI</span>
         </div>
         
         <nav className="nav-links">
