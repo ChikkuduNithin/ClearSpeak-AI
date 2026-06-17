@@ -12,25 +12,24 @@ build-essential
 
 WORKDIR /app
 
-# Copy requirements first
+# Copy requirements file
 
 COPY requirements.txt .
 
-# Upgrade pip and install build tools required by whisper
+# Upgrade pip and install build tools
 
 RUN pip install --no-cache-dir --upgrade pip setuptools wheel
 
 # Install CPU version of PyTorch
 
-RUN pip install --no-cache-dir 
-torch==2.2.1 
+RUN pip install --no-cache-dir torch==2.2.1 
 --extra-index-url https://download.pytorch.org/whl/cpu
 
-# Install project dependencies
+# Install Python dependencies
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy backend code
 
 COPY backend/ ./backend/
 
@@ -38,6 +37,6 @@ COPY backend/ ./backend/
 
 EXPOSE 8000
 
-# Start FastAPI
+# Start application
 
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
